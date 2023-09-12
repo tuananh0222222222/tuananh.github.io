@@ -90,6 +90,7 @@ body {
   right: 0px;
   top: 1px;
   cursor: pointer;
+  transition: all 0.3s linear;
 }
 
 .sidebar {
@@ -123,7 +124,7 @@ body {
 .container {
   padding: 0px 0 0 50px;
   background-color: #151515;
-  height: calc(100vh - 50px);
+  min-height: calc(100vh - 50px);
   color: white;
 }
 .feature-content {
@@ -141,9 +142,9 @@ body {
   gap: 30px;
 }
 .feature-title {
-    font-size: 1.5em;
-    color: white;
-    box-shadow: 10px 10px 20px #a7a3a3;
+  font-size: 1.5em;
+  color: white;
+  box-shadow: 10px 10px 20px #a7a3a3;
 }
 .feature-desc button {
   width: 100px;
@@ -152,4 +153,122 @@ body {
   outline: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.move-list_container {
+  padding: 20px;
+}
+.movie-list_item__img {
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.movie-list {
+  display: flex;
+  height: 300px;
+  align-items: center;
+  gap: 30px;
+  transform: translateX(0);
+  transition: all 1s;
+}
+.movie-list_wrapper {
+  overflow: hidden;
+}
+.movie-list_item {
+  position: relative;
+}
+.movie-list_item:hover .movie-list_item__img {
+  transform: scale(1.05);
+  transition: all 0.6s;
+  opacity: 0.3;
+}
+.movie-list_item:hover .movie-list_watch {
+  opacity: 1;
+  transition: all 0.6s;
+}
+.movie-list_watch {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: auto;
+  margin: 50px 0 0 10px;
+  opacity: 0;
+}
+
+.movie-list_item__title {
+  font-size: 1.5em;
+  color: #a7a3a3;
+  font-weight: 600;
+}
+.movie-list_item__desc {
+  font-size: 1.3em;
+  color: #a7a3a3;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.btn-watch {
+  text-decoration: none;
+  background-color: aqua;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.movie-list_wrapper {
+  position: relative;
+}
+.arrow {
+  font-size: 6em;
+  position: absolute;
+  right: 0;
+  top: 30%;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.container.active {
+  background-color: white;
+}
+.movie-list_item__title.active {
+  color: black;
+}
+.movie-list_item__desc.active {
+  color: black;
+}
+
+.navbar-container.active {
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+.menu-list-item.active a {
+  color: rgb(0, 0, 0);
+}
+.menu-list-item.active a:hover {
+  color: rgb(107, 107, 107);
+  transition: all 0.3s;
+}
+.sidebar.active {
+  background-color: white;
+}
+.left-menu-icon.active {
+  color: black;
+}
+.move-list_title.active {
+  color: black;
+}
+.arrow.active {
+  color: black;
+}
+.toggle.active {
+  background-color: black;
+}
+.toggle-ball.active {
+  background-color: white;
+  transform: translateX(-24px);
+}
+
+
+@media screen and (max-width:940px) {
+  .menu-container {
+    display: none;
+  }
 }
